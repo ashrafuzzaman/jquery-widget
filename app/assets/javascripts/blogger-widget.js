@@ -54,29 +54,33 @@
     function main() {
         // Load image slider library
         //jQuery.getScript(host + "assets/event-widget/all.js", function() {
-            jQuery(".blogger-jquery-widget").ready(function($) {
-                var element = $(".blogger-jquery-widget");
-                /******* Load CSS *******/
-                // if(element.data('no-css') != true)
-                //     addCss(host + "assets/event-widget.css");
+            jQuery(document).ready(function($) {
+                $(".blogger-jquery-widget").each(function(index) {
+                    var widget = $(this);
+                    /******* Load CSS *******/
+                    // if($(this).data('no-css') != true)
+                    //     addCss(host + "assets/event-widget.css");
 
-                var jsonp_url = "http://jitu-blog.blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
-                $.getJSON(jsonp_url, function(data) {
-                    var root = $('<ul/>');
-                    $.each(data.feed.entry, function(i, item){
-                        var item_str = '<li><div>' +
-                            '<span>' + item.title.$t + '</span>'+
-                            '</div></li>';
-                        $(item_str).appendTo(root);
+                    var jsonp_url = "http://jitu-blog.blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
+                    $.getJSON(jsonp_url, function(data) {
+                        var root = $('<ul/>');
+                        $.each(data.feed.entry, function(i, item){
+                            var item_str = '<li><div>' +
+                                '<span>' + item.title.$t + '</span>'+
+                                '</div></li>';
+                            $(item_str).appendTo(root);
+                        });
+                        root.appendTo(widget);
+                        // alert($(this).html());
+                        // root.bxSlider({
+                        //     auto: true,
+                        //     easing: 'easeInQuint',
+                        //     speed: 1000
+                        // });
+
+                        // adjustArrow($);
                     });
-                    root.appendTo(".blogger-jquery-widget");
-                    // root.bxSlider({
-                    //     auto: true,
-                    //     easing: 'easeInQuint',
-                    //     speed: 1000
-                    // });
 
-                    // adjustArrow($);
                 });
             });
         //});
@@ -91,12 +95,12 @@
         css_link.appendTo('head');
     }
     
-    function adjustArrow($) {
-        element = $(".blogger-jquery-widget");
-        var top = element.height() / 2 - (element.find(".bx-prev").first().height()/2);
-        element.find(".bx-prev").css("top", top);
-        element.find(".bx-next").css("top", top);
-    }
+    // function adjustArrow($) {
+    //     element = $(".blogger-jquery-widget");
+    //     var top = element.height() / 2 - (element.find(".bx-prev").first().height()/2);
+    //     element.find(".bx-prev").css("top", top);
+    //     element.find(".bx-next").css("top", top);
+    // }
 
     function trimText(text, length) {
         text = text || "";
