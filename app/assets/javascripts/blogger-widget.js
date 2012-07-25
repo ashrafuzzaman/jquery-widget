@@ -53,37 +53,41 @@
     /******** Our main function ********/
     function main() {
         // Load image slider library
-        //jQuery.getScript(host + "assets/event-widget/all.js", function() {
+        //http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.min.js
+        jQuery.getScript("http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.min.js");
+        jQuery.getScript("http://bxslider.com/sites/default/files/jquery.bxSlider.min.js", function() {
             jQuery(document).ready(function($) {
                 $(".blogger-jquery-widget").each(function(index) {
-                    var widget = $(this);
-                    /******* Load CSS *******/
-                    // if($(this).data('no-css') != true)
-                    //     addCss(host + "assets/event-widget.css");
-
-                    var jsonp_url = "http://jitu-blog.blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
-                    $.getJSON(jsonp_url, function(data) {
-                        var root = $('<ul/>');
-                        $.each(data.feed.entry, function(i, item){
-                            var item_str = '<li><div>' +
-                                '<span>' + item.title.$t + '</span>'+
-                                '</div></li>';
-                            $(item_str).appendTo(root);
-                        });
-                        root.appendTo(widget);
-                        // alert($(this).html());
-                        // root.bxSlider({
-                        //     auto: true,
-                        //     easing: 'easeInQuint',
-                        //     speed: 1000
-                        // });
-
-                        // adjustArrow($);
-                    });
-
+                    make_widget($, $(this));
                 });
             });
-        //});
+        });
+    }
+
+    function make_widget($, widget) {
+        var blogName = widget.data('blog-name');
+        /******* Load CSS *******/
+        // if($(this).data('no-css') != true)
+        //     addCss(host + "assets/event-widget.css");
+
+        var jsonp_url = "http://" + blogName + ".blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
+        $.getJSON(jsonp_url, function(data) {
+            var root = $('<ul/>');
+            $.each(data.feed.entry, function(i, item){
+                var item_str = '<li><div>' +
+                    '<span>' + item.title.$t + '</span>'+
+                    '</div></li>';
+                $(item_str).appendTo(root);
+            });
+            root.appendTo(widget);
+            root.bxSlider({
+                auto: true,
+                easing: 'easeInQuint',
+                speed: 1000
+            });
+
+            // adjustArrow($);
+        });
     }
 
     function addCss(url) {
