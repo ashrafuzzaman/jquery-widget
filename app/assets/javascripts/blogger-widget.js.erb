@@ -58,7 +58,11 @@
         jQuery.getScript("http://bxslider.com/sites/default/files/jquery.bxSlider.min.js", function() {
             jQuery(document).ready(function($) {
                 $(".blogger-jquery-widget").each(function(index) {
-                    make_widget($, $(this));
+                    var isWidget = $(this).data("widget");
+                    if(!isWidget) {
+                        $(this).data("widget", true);
+                        make_widget($, $(this));
+                    }
                 });
             });
         });
