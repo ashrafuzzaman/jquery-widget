@@ -1,133 +1,17 @@
 .blogger-jquery-widget {
-/** * html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/) * Richard Clark (http://richclarkdesign.com) * http://cssreset.com */
-  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+
+  div, li, ul, ol {
     margin: 0;
     padding: 0;
     border: 0;
-    outline: 0;
     font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
-    background: transparent;
-    line-height: normal;
-    text-align: left;
-  }
-
-  blockquote, q {
-    quotes: none;
-  }
-
-  blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-  }
-
-  a {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-  }
-
-/* change colours to suit your needs */
-  ins {
-    background-color: #ff9;
-    color: #000;
-    text-decoration: none;
-  }
-
-/* change colours to suit your needs */
-  mark {
-    background-color: #ff9;
-    color: #000;
-    font-style: italic;
-    font-weight: bold;
-  }
-
-  del {
-    text-decoration: line-through;
-  }
-
-  abbr[title], dfn[title] {
-    border-bottom: 1px dotted;
-    cursor: help;
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-/* change border colour to suit your needs */
-  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #cccccc;
-    margin: 1em 0;
-    padding: 0;
-  }
-
-  input, select {
-    vertical-align: middle;
-  }
-  /* reset css*/
-
-/* widget css*/
-
-  padding: 0px 35px 0px 30px;
-  margin: 0;
-  border: 0;
-  font-size: 100%;
-  .bx-window {
-    margin: 0 auto;
-  }
-
-  li a {
-    float: left;
-    margin: 0px 7px 5px 1px;
-    padding: 2px;
-    border: solid 1px #CCC;
-    -moz-box-shadow: 1px 1px 5px #AAA;
-    -webkit-box-shadow: 1px 1px 5px #AAA;
-    box-shadow: 1px 1px 5px #AAA;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    img {
-      margin: 0px;
-      padding: 0px;
-    }
-  }
-
-  h1 {
-    font-size: 16px;
-  }
-  span {
-    font-size: 11px;
-    color: #000000;
-  }
-  span.duration {
-    display: block;
-    color: #454545;
-  }
-  content {
-    float: left;
-  }
-
-  ul {
-    overflow: hidden;
-  }
-
-  li {
-    list-style: none;
-    margin: 0;
-    padding: 0px 5px 0px 5px;
   }
 
   .bx-wrapper {
     margin: 0 auto;
-    padding: 10px 2px 10px 2px;
+    padding: 10px 15px 10px 15px;
   }
 
   .bx-prev, .bx-next {
@@ -138,13 +22,13 @@
   }
 
   .bx-prev {
-    left: -26px;
-    background: url(event-widget/images/icon_arrow_left.png) no-repeat 0 -31px;
+    left: 6px;
+    background: url(http://bxslider.com/sites/all/themes/bx/images/icon_arrow_left.png) no-repeat 0 -31px;
   }
 
   .bx-next {
-    right: -26px;
-    background: url(event-widget/images/icon_arrow_right.png) no-repeat 0 -31px;
+    right: 36px;
+    background: url(http://bxslider.com/sites/all/themes/bx/images/icon_arrow_right.png) no-repeat 0 -31px;
   }
 
   .bx-next:hover,
@@ -152,7 +36,7 @@
     background-position: 0 0;
   }
 
-/*start / stop*/
+  /*start / stop*/
   .bx-auto {
     text-align: center;
   }
@@ -171,7 +55,7 @@
     text-decoration: none;
   }
 
-/*pager*/
+  /*pager*/
   .bx-pager {
     text-align: center;
   }
@@ -188,45 +72,44 @@
     text-decoration: none;
   }
 
-}
+  /* shadow effect */
 
-/* shadow effect */
+  & {
+    background: #FFF;
+  }
 
-.blogger-jquery-widget {
-  background: #FFF;
-}
+  /*==================================================
+   * Effect 6
+   * ===============================================*/
+  &.effect6 {
+    position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  }
 
-/*==================================================
- * Effect 6
- * ===============================================*/
-.blogger-jquery-widget.effect6 {
-  position: relative;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
+  &.effect6:before, &.effect6:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    top: 50%;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    -moz-border-radius: 100px / 10px;
+    border-radius: 100px / 10px;
+  }
 
-.blogger-jquery-widget.effect6:before, .blogger-jquery-widget.effect6:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-  top: 50%;
-  bottom: 0;
-  left: 10px;
-  right: 10px;
-  -moz-border-radius: 100px / 10px;
-  border-radius: 100px / 10px;
-}
-
-.blogger-jquery-widget.effect6:after {
-  right: 10px;
-  left: auto;
-  -webkit-transform: skew(8deg) rotate(3deg);
-  -moz-transform: skew(8deg) rotate(3deg);
-  -ms-transform: skew(8deg) rotate(3deg);
-  -o-transform: skew(8deg) rotate(3deg);
-  transform: skew(8deg) rotate(3deg);
+  &.effect6:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: skew(8deg) rotate(3deg);
+    -moz-transform: skew(8deg) rotate(3deg);
+    -ms-transform: skew(8deg) rotate(3deg);
+    -o-transform: skew(8deg) rotate(3deg);
+    transform: skew(8deg) rotate(3deg);
+  }
 }
