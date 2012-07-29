@@ -2,6 +2,7 @@
  * Reference: http://alexmarandon.com/articles/web_widget_jquery/
  * Slider used: http://bxslider.com/examples
  * Shadow effects: http://www.paulund.co.uk/creating-different-css3-box-shadows-effects
+ * Blogspot JSON feed: http://beautifulbeta.wikidot.com/json-feeds
  *
  * Usage:
  * Add the following code in the html
@@ -51,6 +52,7 @@
     function main() {
         // Load image slider library
         jQuery.getScript("http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.min.js");
+        
         jQuery.getScript("http://bxslider.com/sites/default/files/jquery.bxSlider.min.js", function() {
             jQuery(document).ready(function($) {
                 $(".blogger-jquery-widget").each(function(index) {
@@ -74,9 +76,17 @@
         $.getJSON(jsonp_url, function(data) {
             var root = $('<ul/>');
             $.each(data.feed.entry, function(i, item){
-                var item_str = '<li><div>' +
-                    '<span>' + item.title.$t + '</span>'+
-                    '</div></li>';
+                var tags = "";
+                if(item.category) {
+                    $.each(item.category, function(i, tag){
+                        tags += "<li>" + tag.term + "</li>";
+                    });
+                }
+                var item_str = '<li>' +
+                    '<h1>' + item.title.$t + '</h1>' +
+                    '<span class="posted_on">' + item.published.$t + '</span>' +
+                    '<ul class="categories">' + tags + '</ul>' +
+                    '</li>';
                 $(item_str).appendTo(root);
             });
             root.appendTo(widget);
@@ -100,7 +110,7 @@
     }
     
     function adjustArrowTop($, widget) {
-        var top = widget.height() / 2 - (widget.find(".bx-prev").first().height()/2);
+        var top = widget.height() / 2;
         widget.find(".bx-prev").css("top", top);
         widget.find(".bx-next").css("top", top);
     }

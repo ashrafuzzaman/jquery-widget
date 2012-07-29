@@ -9,31 +9,55 @@
     vertical-align: baseline;
   }
 
+  span.posted_on {
+    font-size: 80% !important;
+  }
+
+  .categories li {
+    font-size: 70% !important;
+    margin: 0 !important;
+    border: 1px;
+  }
+
   .bx-wrapper {
     margin: 0 auto;
-    padding: 10px 15px 10px 15px;
+    padding: 0px;
+    overflow: hidden;
+  }
+
+  .bx-window {
+    margin: 10px 30px 10px 30px;
+    overflow: hidden;
   }
 
   .bx-prev, .bx-next {
     position: absolute;
-    width: 31px;
-    height: 31px;
-    text-indent: -999999px;
+    left: 8px;
+    background: transparent url(http://tympanus.net/Tutorials/ResponsiveImageGallery/images/nav_thumbs.png) no-repeat top left;
+    width: 14px;
+    height: 26px;
+    margin-top: -13px;
+    text-indent: -9000px;
+    cursor: pointer;
+    opacity: 0.8;
   }
 
   .bx-prev {
-    left: 6px;
-    background: url(http://bxslider.com/sites/all/themes/bx/images/icon_arrow_left.png) no-repeat 0 -31px;
+    /*right: 8px;
+    left: auto;
+    background-position: top right;*/
   }
 
   .bx-next {
-    right: 36px;
-    background: url(http://bxslider.com/sites/all/themes/bx/images/icon_arrow_right.png) no-repeat 0 -31px;
+    right:8px;
+    left:auto;
+    background-position:top right;
   }
 
   .bx-next:hover,
   .bx-prev:hover {
-    background-position: 0 0;
+    /*background-position: 0 0;*/
+    opacity:1.0;
   }
 
   /*start / stop*/
