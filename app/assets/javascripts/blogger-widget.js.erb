@@ -84,8 +84,15 @@
                 }
 
                 var published_date = format_date(new Date(item.published.$t));
+
+                var postUrl = "";
+                $.each(item.link, function(i, link){
+                    if(link.rel == "alternate") {
+                        postUrl = link.href;
+                    }
+                });
                 var item_str = '<li>' +
-                    '<h1>' + item.title.$t + '</h1>' +
+                    '<h1><a href="' + postUrl + '">' + item.title.$t + '</a></h1>' +
                     '<span class="posted_on">Posted on ' + published_date + '</span>' +
                     '<ul class="categories">' + tags + '</ul>' +
                     '</li>';
