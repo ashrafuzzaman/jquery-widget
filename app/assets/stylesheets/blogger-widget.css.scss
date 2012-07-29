@@ -15,8 +15,15 @@
 
   .categories li {
     font-size: 70% !important;
-    margin: 0 !important;
+    margin: 0px 7px 0px 0px !important;
     border: 1px;
+    float: left;
+    display: block;
+    border-radius: 5px;
+    border: 1px;
+    border-color: #000000 !important;
+    background-color: #dedede !important;
+    padding: 1px 5px 1px 5px;
   }
 
   .bx-wrapper {
