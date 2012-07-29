@@ -1,6 +1,6 @@
 .blogger-jquery-widget {
 
-  div, li, ul, ol {
+  div, li, ul, ol, h1 {
     margin: 0;
     padding: 0;
     border: 0;
@@ -9,12 +9,16 @@
     vertical-align: baseline;
   }
 
+  h1 {
+    font-size: 18px;
+  }
+
   span.posted_on {
-    font-size: 80% !important;
+    font-size: 16px !important;
   }
 
   .categories li {
-    font-size: 70% !important;
+    font-size: 14px !important;
     margin: 0px 7px 0px 0px !important;
     border: 1px;
     float: left;
@@ -23,13 +27,14 @@
     border: 1px;
     border-color: #000000 !important;
     background-color: #dedede !important;
-    padding: 1px 5px 1px 5px;
+    padding: 2px 7px 1px 7px;
   }
 
   .bx-wrapper {
     margin: 0 auto;
     padding: 0px;
     overflow: hidden;
+    width: 100%;
   }
 
   .bx-window {
