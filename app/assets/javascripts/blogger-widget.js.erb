@@ -70,7 +70,7 @@
         var blogName = widget.data('blog-name');
         /******* Load CSS *******/
         if(widget.data('no-css') != true)
-            addCss("<%= HOST %>/assets/blogger-widget.css");
+            addCss("<%= HOST %>/assets/application.css");
 
         var jsonp_url = "http://" + blogName + ".blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
         $.getJSON(jsonp_url, function(data) {
