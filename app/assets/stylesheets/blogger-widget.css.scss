@@ -1,6 +1,6 @@
 .blogger-jquery-widget {
 
-  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  ul, li, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -23,6 +23,7 @@
   .categories li {
     font-size: 14px !important;
     margin: 0px 7px 0px 0px !important;
+    padding: 0px !important;
     border: 1px;
     float: left;
     display: block;
@@ -34,10 +35,10 @@
   }
 
   .bx-wrapper {
-    margin: 0 auto;
+    margin: 0px;
     padding: 0px;
     overflow: hidden;
-    width: 100%;
+    width: inherit !important;
   }
 
   .bx-window {
